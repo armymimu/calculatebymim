@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>คำนวณ % ที่ผ่อนมาของ Armymimu</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f9f9f9;
+        margin: 0;
+        padding: 0;
+    }
+    .container {
+        max-width: 400px;
+        margin: 0 auto;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        background-color: #fff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    h2 {
+        color: #ff69b4;
+        text-align: center;
+    }
+    input[type="number"] {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-sizing: border-box;
+    }
+    button {
+        width: 100%;
+        padding: 10px;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    button:hover {
+        background-color: #45a049;
+    }
+</style>
+</head>
+<body>
+<div class="container">
+    <h2>คำนวณ % ที่ผ่อนมาของ Armymimu</h2>
+    <form id="percentageForm">
+        <label for="price">ราคาสินค้า:</label>
+        <input type="number" id="price" name="price" step="0.01" required>
+        <label for="sentMoney">เงินที่ส่งไป:</label>
+        <input type="number" id="sentMoney" name="sentMoney" step="0.01" required>
+        <button type="submit">คำนวณเปอร์เซ็นต์</button>
+    </form>
+    <div id="result"></div>
+</div>
+
+<script>
+    document.getElementById("percentageForm").addEventListener("submit", function(event) {
+        event.preventDefault();
+        var price = parseFloat(document.getElementById("price").value);
+        var sentMoney = parseFloat(document.getElementById("sentMoney").value);
+        var percentage = (sentMoney / price) * 100;
+        document.getElementById("result").innerText = "เปอร์เซ็นต์ที่ได้คือ: " + percentage.toFixed(2) + " %";
+    });
+</script>
+</body>
+</html>
